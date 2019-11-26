@@ -36,16 +36,16 @@ public class LearnController {
         return ApiResult.success(learnUserDtos);
     }
 
-//    @RequestMapping(value = "/getUserPage")
-//    public ApiResult getUserPage(LearnUserDto learnUser){
-//        List<LearnUserDto> learnUserDtos;
-//        try {
-//            learnUserDtos = learnService.getLearnUsers();
-//        } catch (Exception e){
-//            logger.error("查询学生对象失败", e);
-//            return ApiResult.failure(ResultCode.FAIL);
-//        }
-//        return ApiResult.success(learnUserDtos);
-//    }
+    @RequestMapping(value = "/getUserPage")
+    public ApiResult getUserPage(LearnUserDto learnUser){
+        List<LearnUserDto> learnUserDtos;
+        try {
+            learnUserDtos = learnService.getLearnUsers();
+        } catch (Exception e){
+            logger.error("查询学生对象失败", e);
+            return ApiResult.failure(ResultCode.FAIL);
+        }
+        return ApiResult.success(learnUserDtos);
+    }
 
 }
