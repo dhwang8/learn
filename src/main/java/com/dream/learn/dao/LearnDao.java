@@ -4,9 +4,13 @@ import com.dream.learn.dto.LearnUserDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface LearnDao {
 
     List<LearnUserDto> getLearnUsers();
+
+    List<LearnUserDto> getUserPage(Map<String, Integer> hashMap);
+
 }
