@@ -13,5 +13,16 @@
         limit #{begin}, #{end}
     </select>
 
+    <!-- 批量插入数据 -->
+    <insert id="saveOrders" parameterType="list" >
+        INSERT INTO t_order_info ( ID , APPKEY , OUT_ORDER_ID  ) VALUES
+        <foreach collection="list" item="tOrderInfo" index="index"
+                 separator=",">
+            (
+            #{tOrderInfo.Id },#{tOrderInfo.appkey},#{tOrderInfo.outOrderId}
+            )
+        </foreach>
+    </insert>
+
 </mapper>
 

@@ -1,6 +1,7 @@
 package com.dream.learn.dao;
 
 import com.dream.learn.dto.LearnUserDto;
+import com.dream.learn.dto.TOrderInfo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,5 +13,7 @@ public interface LearnDao {
     List<LearnUserDto> getLearnUsers();
 
     List<LearnUserDto> getUserPage(Map<String, Integer> hashMap);
+
+    void saveOrders(List<TOrderInfo> tOrderInfos);
 
 }

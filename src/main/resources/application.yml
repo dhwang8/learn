@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    url: jdbc:mysql://106.15.228.79:3306/laoshanvipmsdb?serverTimezone=UTC
     username: root
-    password: 111111
+    password: njls6789
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 # 之后的填写mybatis的mapper书写路径
