@@ -1,404 +1,367 @@
 package com.dream.learn.dto;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.Date;
 
-public class TOrderInfo implements Serializable {
+public class TOrderInfo {
+
+  private String id;
+  private String appkey;
+  private String outOrderId;
+  private String userId;
+  private String carTypeNo;
+  private String vin;
+  private String carLicenseNo;
+  private long startType;
+  private String stubGroupId;
+  private String stubId;
+  private double electricStart;
+  private double electricEnd;
+  private java.sql.Timestamp timeStart;
+  private java.sql.Timestamp timeEnd;
+  private double feeTotal;
+  private double feeService;
+  private double feeElectric;
+  private long chargeType;
+  private double power;
+  private String endCode;
+  private String endInfo;
+  private long status;
+  private java.sql.Timestamp createTime;
+  private java.sql.Timestamp modifyTime;
+  private String cardType;
+  private String cardNumber;
+  private String info;
+  private String cspOrderId;
+  private String limitFee;
+  private String discountInfo;
+  private String feeDiscount;
+  private String totalFeeInfo;
+  private long stubBilling;
+  private String chargeDetail;
+  private long auditFlag;
+  private java.sql.Timestamp settleTime;
 
-    //订单编号
-    private String Id;
 
-    //第三方编号
-    private String appkey;
+  public String getId() {
+    return id;
+  }
 
-    //第三方订单编号
-    private String outOrderId;
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    //用户编号
-    private String userId;
 
-    //车型编号
-    private String carTypeNo;
+  public String getAppkey() {
+    return appkey;
+  }
 
-    //车辆VIN
-    private String vin;
+  public void setAppkey(String appkey) {
+    this.appkey = appkey;
+  }
 
-    //车牌号码
-    private String carLicenseNo;
 
-    //启动类型[
-    private Integer startType;
+  public String getOutOrderId() {
+    return outOrderId;
+  }
 
-    //桩群编号
-    private String stubGroupId;
+  public void setOutOrderId(String outOrderId) {
+    this.outOrderId = outOrderId;
+  }
 
-    //桩编号
-    private String stubId;
 
-    //开始电量
-    private BigDecimal electricStart;
+  public String getUserId() {
+    return userId;
+  }
 
-    //结束电量
-    private BigDecimal electricEnd;
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
 
-    //充电开始时间
-    private Date timeStart;
 
-    //充电结束时间
-    private Date timeEnd;
+  public String getCarTypeNo() {
+    return carTypeNo;
+  }
 
-    //总费用
-    private String feeTotal;
+  public void setCarTypeNo(String carTypeNo) {
+    this.carTypeNo = carTypeNo;
+  }
 
-    //服务费用
-    private String feeService;
 
-    //电量费用
-    private Integer feeElectric;
+  public String getVin() {
+    return vin;
+  }
 
-    //充电类型
-    private String chargeType;
+  public void setVin(String vin) {
+    this.vin = vin;
+  }
 
-    //充电电量
-    private String power;
 
-    //停止代码
-    private String endCode;
+  public String getCarLicenseNo() {
+    return carLicenseNo;
+  }
 
-    //停止信息
-    private String endInfo;
+  public void setCarLicenseNo(String carLicenseNo) {
+    this.carLicenseNo = carLicenseNo;
+  }
 
-    //状态[1:充电中,9:充电完成]
-    private String status;
 
-    //订单创建时间
-    private String createTime;
+  public long getStartType() {
+    return startType;
+  }
 
-    //订单修改时间
-    private String modifyTime;
+  public void setStartType(long startType) {
+    this.startType = startType;
+  }
 
-    //卡类型
-    private String cardType;
 
-    //卡号
-    private Integer cardNumber;
+  public String getStubGroupId() {
+    return stubGroupId;
+  }
 
-    //订单当时的计费和服务费
-    private String info;
+  public void setStubGroupId(String stubGroupId) {
+    this.stubGroupId = stubGroupId;
+  }
 
-    //PS:存放不存在VIN的车辆真实VIN码
-    private String cspOrderId;
 
-    //费用限制
-    private String limitFee;
+  public String getStubId() {
+    return stubId;
+  }
 
-    //折扣信息
-    private String discountInfo;
+  public void setStubId(String stubId) {
+    this.stubId = stubId;
+  }
 
-    //优惠金额
-    private String feeDiscount;
 
-    //订单计费信息
-    private String totalFeeInfo;
+  public double getElectricStart() {
+    return electricStart;
+  }
 
-    //是否桩端计费(0:否,1:是)
-    private String stubBilling;
+  public void setElectricStart(double electricStart) {
+    this.electricStart = electricStart;
+  }
 
-    //充电明细:[[开始时间,结束时间,电费价格(折扣后),服务费价格(折扣后),电费价格(折扣前),服务费价格(折扣前),期间充电量,电费(折扣后),服务费(折扣后),电费(折扣前),服务费(折扣前)],...]
-    private String chargeDetail;
 
-    //审计标记(0:正常,1:功率不符)
-    private Integer auditFlag;
+  public double getElectricEnd() {
+    return electricEnd;
+  }
 
-    //审计时间
-    private String settleTime;
+  public void setElectricEnd(double electricEnd) {
+    this.electricEnd = electricEnd;
+  }
 
-    public String getId() {
-        return Id;
-    }
 
-    public void setId(String id) {
-        Id = id;
-    }
+  public java.sql.Timestamp getTimeStart() {
+    return timeStart;
+  }
 
-    public String getAppkey() {
-        return appkey;
-    }
+  public void setTimeStart(java.sql.Timestamp timeStart) {
+    this.timeStart = timeStart;
+  }
 
-    public void setAppkey(String appkey) {
-        this.appkey = appkey;
-    }
 
-    public String getOutOrderId() {
-        return outOrderId;
-    }
+  public java.sql.Timestamp getTimeEnd() {
+    return timeEnd;
+  }
 
-    public void setOutOrderId(String outOrderId) {
-        this.outOrderId = outOrderId;
-    }
+  public void setTimeEnd(java.sql.Timestamp timeEnd) {
+    this.timeEnd = timeEnd;
+  }
 
-    public String getUserId() {
-        return userId;
-    }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+  public double getFeeTotal() {
+    return feeTotal;
+  }
 
-    public String getCarTypeNo() {
-        return carTypeNo;
-    }
+  public void setFeeTotal(double feeTotal) {
+    this.feeTotal = feeTotal;
+  }
 
-    public void setCarTypeNo(String carTypeNo) {
-        this.carTypeNo = carTypeNo;
-    }
 
-    public String getVin() {
-        return vin;
-    }
+  public double getFeeService() {
+    return feeService;
+  }
 
-    public void setVin(String vin) {
-        this.vin = vin;
-    }
+  public void setFeeService(double feeService) {
+    this.feeService = feeService;
+  }
 
-    public String getCarLicenseNo() {
-        return carLicenseNo;
-    }
 
-    public void setCarLicenseNo(String carLicenseNo) {
-        this.carLicenseNo = carLicenseNo;
-    }
+  public double getFeeElectric() {
+    return feeElectric;
+  }
 
-    public Integer getStartType() {
-        return startType;
-    }
+  public void setFeeElectric(double feeElectric) {
+    this.feeElectric = feeElectric;
+  }
 
-    public void setStartType(Integer startType) {
-        this.startType = startType;
-    }
 
-    public String getStubGroupId() {
-        return stubGroupId;
-    }
+  public long getChargeType() {
+    return chargeType;
+  }
 
-    public void setStubGroupId(String stubGroupId) {
-        this.stubGroupId = stubGroupId;
-    }
+  public void setChargeType(long chargeType) {
+    this.chargeType = chargeType;
+  }
 
-    public String getStubId() {
-        return stubId;
-    }
 
-    public void setStubId(String stubId) {
-        this.stubId = stubId;
-    }
+  public double getPower() {
+    return power;
+  }
 
-    public BigDecimal getElectricStart() {
-        return electricStart;
-    }
+  public void setPower(double power) {
+    this.power = power;
+  }
 
-    public void setElectricStart(BigDecimal electricStart) {
-        this.electricStart = electricStart;
-    }
 
-    public BigDecimal getElectricEnd() {
-        return electricEnd;
-    }
+  public String getEndCode() {
+    return endCode;
+  }
 
-    public void setElectricEnd(BigDecimal electricEnd) {
-        this.electricEnd = electricEnd;
-    }
+  public void setEndCode(String endCode) {
+    this.endCode = endCode;
+  }
 
-    public Date getTimeStart() {
-        return timeStart;
-    }
 
-    public void setTimeStart(Date timeStart) {
-        this.timeStart = timeStart;
-    }
+  public String getEndInfo() {
+    return endInfo;
+  }
 
-    public Date getTimeEnd() {
-        return timeEnd;
-    }
+  public void setEndInfo(String endInfo) {
+    this.endInfo = endInfo;
+  }
 
-    public void setTimeEnd(Date timeEnd) {
-        this.timeEnd = timeEnd;
-    }
 
-    public String getFeeTotal() {
-        return feeTotal;
-    }
+  public long getStatus() {
+    return status;
+  }
 
-    public void setFeeTotal(String feeTotal) {
-        this.feeTotal = feeTotal;
-    }
+  public void setStatus(long status) {
+    this.status = status;
+  }
 
-    public String getFeeService() {
-        return feeService;
-    }
 
-    public void setFeeService(String feeService) {
-        this.feeService = feeService;
-    }
+  public java.sql.Timestamp getCreateTime() {
+    return createTime;
+  }
 
-    public Integer getFeeElectric() {
-        return feeElectric;
-    }
+  public void setCreateTime(java.sql.Timestamp createTime) {
+    this.createTime = createTime;
+  }
 
-    public void setFeeElectric(Integer feeElectric) {
-        this.feeElectric = feeElectric;
-    }
 
-    public String getChargeType() {
-        return chargeType;
-    }
+  public java.sql.Timestamp getModifyTime() {
+    return modifyTime;
+  }
 
-    public void setChargeType(String chargeType) {
-        this.chargeType = chargeType;
-    }
+  public void setModifyTime(java.sql.Timestamp modifyTime) {
+    this.modifyTime = modifyTime;
+  }
 
-    public String getPower() {
-        return power;
-    }
 
-    public void setPower(String power) {
-        this.power = power;
-    }
+  public String getCardType() {
+    return cardType;
+  }
 
-    public String getEndCode() {
-        return endCode;
-    }
+  public void setCardType(String cardType) {
+    this.cardType = cardType;
+  }
 
-    public void setEndCode(String endCode) {
-        this.endCode = endCode;
-    }
 
-    public String getEndInfo() {
-        return endInfo;
-    }
+  public String getCardNumber() {
+    return cardNumber;
+  }
 
-    public void setEndInfo(String endInfo) {
-        this.endInfo = endInfo;
-    }
+  public void setCardNumber(String cardNumber) {
+    this.cardNumber = cardNumber;
+  }
 
-    public String getStatus() {
-        return status;
-    }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+  public String getInfo() {
+    return info;
+  }
 
-    public String getCreateTime() {
-        return createTime;
-    }
+  public void setInfo(String info) {
+    this.info = info;
+  }
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
 
-    public String getModifyTime() {
-        return modifyTime;
-    }
+  public String getCspOrderId() {
+    return cspOrderId;
+  }
 
-    public void setModifyTime(String modifyTime) {
-        this.modifyTime = modifyTime;
-    }
+  public void setCspOrderId(String cspOrderId) {
+    this.cspOrderId = cspOrderId;
+  }
 
-    public String getCardType() {
-        return cardType;
-    }
 
-    public void setCardType(String cardType) {
-        this.cardType = cardType;
-    }
+  public String getLimitFee() {
+    return limitFee;
+  }
 
-    public Integer getCardNumber() {
-        return cardNumber;
-    }
+  public void setLimitFee(String limitFee) {
+    this.limitFee = limitFee;
+  }
 
-    public void setCardNumber(Integer cardNumber) {
-        this.cardNumber = cardNumber;
-    }
 
-    public String getInfo() {
-        return info;
-    }
+  public String getDiscountInfo() {
+    return discountInfo;
+  }
 
-    public void setInfo(String info) {
-        this.info = info;
-    }
+  public void setDiscountInfo(String discountInfo) {
+    this.discountInfo = discountInfo;
+  }
 
-    public String getCspOrderId() {
-        return cspOrderId;
-    }
 
-    public void setCspOrderId(String cspOrderId) {
-        this.cspOrderId = cspOrderId;
-    }
+  public String getFeeDiscount() {
+    return feeDiscount;
+  }
 
-    public String getLimitFee() {
-        return limitFee;
-    }
+  public void setFeeDiscount(String feeDiscount) {
+    this.feeDiscount = feeDiscount;
+  }
 
-    public void setLimitFee(String limitFee) {
-        this.limitFee = limitFee;
-    }
 
-    public String getDiscountInfo() {
-        return discountInfo;
-    }
+  public String getTotalFeeInfo() {
+    return totalFeeInfo;
+  }
 
-    public void setDiscountInfo(String discountInfo) {
-        this.discountInfo = discountInfo;
-    }
+  public void setTotalFeeInfo(String totalFeeInfo) {
+    this.totalFeeInfo = totalFeeInfo;
+  }
 
-    public String getFeeDiscount() {
-        return feeDiscount;
-    }
 
-    public void setFeeDiscount(String feeDiscount) {
-        this.feeDiscount = feeDiscount;
-    }
+  public long getStubBilling() {
+    return stubBilling;
+  }
 
-    public String getTotalFeeInfo() {
-        return totalFeeInfo;
-    }
+  public void setStubBilling(long stubBilling) {
+    this.stubBilling = stubBilling;
+  }
 
-    public void setTotalFeeInfo(String totalFeeInfo) {
-        this.totalFeeInfo = totalFeeInfo;
-    }
 
-    public String getStubBilling() {
-        return stubBilling;
-    }
+  public String getChargeDetail() {
+    return chargeDetail;
+  }
 
-    public void setStubBilling(String stubBilling) {
-        this.stubBilling = stubBilling;
-    }
+  public void setChargeDetail(String chargeDetail) {
+    this.chargeDetail = chargeDetail;
+  }
 
-    public String getChargeDetail() {
-        return chargeDetail;
-    }
 
-    public void setChargeDetail(String chargeDetail) {
-        this.chargeDetail = chargeDetail;
-    }
+  public long getAuditFlag() {
+    return auditFlag;
+  }
 
-    public Integer getAuditFlag() {
-        return auditFlag;
-    }
+  public void setAuditFlag(long auditFlag) {
+    this.auditFlag = auditFlag;
+  }
 
-    public void setAuditFlag(Integer auditFlag) {
-        this.auditFlag = auditFlag;
-    }
 
-    public String getSettleTime() {
-        return settleTime;
-    }
+  public java.sql.Timestamp getSettleTime() {
+    return settleTime;
+  }
 
-    public void setSettleTime(String settleTime) {
-        this.settleTime = settleTime;
-    }
+  public void setSettleTime(java.sql.Timestamp settleTime) {
+    this.settleTime = settleTime;
+  }
+
 }

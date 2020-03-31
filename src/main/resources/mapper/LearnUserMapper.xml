@@ -24,5 +24,20 @@
         </foreach>
     </insert>
 
+    <!-- 插入学生-->
+    <insert id="addUser">
+        INSERT INTO `test`.`learn_user` (`id`, `user_name`, `user_tel`, `user_email`, `user_addr`) VALUES
+        (#{id},#{userName},#{userTel},#{userEmail},#{userAddr});
+
+
+    </insert>
+
+    <!-- 插入学校-->
+    <insert id="addSchool">
+        INSERT INTO `test`.`learn_school` ( `school_name`, `school_add`) VALUES
+        (#{schoolName},#{schoolAdd});
+    </insert>
+
+
 </mapper>
 

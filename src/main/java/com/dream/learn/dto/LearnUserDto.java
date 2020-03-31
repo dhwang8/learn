@@ -4,6 +4,16 @@ import com.dream.learn.utils.BaseEntity;
 
 public class LearnUserDto extends BaseEntity {
 
+    public LearnUserDto() {
+    }
+
+    public LearnUserDto(String userName, String userTel, String userEmail, String userAddr) {
+        this.userName = userName;
+        this.userTel = userTel;
+        this.userEmail = userEmail;
+        this.userAddr = userAddr;
+    }
+
     private Long id;
 
     private String userName;
@@ -52,5 +62,16 @@ public class LearnUserDto extends BaseEntity {
 
     public void setUserAddr(String userAddr) {
         this.userAddr = userAddr;
+    }
+
+    @Override
+    public String toString() {
+        return "LearnUserDto{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", userTel='" + userTel + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userAddr='" + userAddr + '\'' +
+                '}';
     }
 }

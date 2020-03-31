@@ -2,11 +2,18 @@ package com.dream.learn.service;
 
 import com.dream.learn.dao.LearnDao;
 import com.dream.learn.dto.LearnUserDto;
+import com.dream.learn.dto.SchoolDto;
+import com.dream.learn.utils.ApiResult;
 import com.dream.learn.utils.PageHelp;
+import com.dream.learn.utils.ResultCode;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.util.HashMap;
 import java.util.List;
@@ -14,6 +21,8 @@ import java.util.Map;
 
 @Service
 public class LearnServiceImpl {
+
+    private static final Logger logger = LoggerFactory.getLogger(LearnServiceImpl.class);
 
     @Autowired
     private LearnDao learnDao;
@@ -36,4 +45,40 @@ public class LearnServiceImpl {
         List<LearnUserDto> list = learnDao.getLearnUsers();
         return new PageInfo<LearnUserDto>(list);
     }
+
+
+    /**
+     * 自动回滚
+     * @return
+     */
+    @Transactional(rollbackFor = { Exception.class })
+    public ApiResult add2() {
+
+        LearnUserDto learnUserDto = new LearnUserDto("xiaoming", "dddd", "wwww", "kkkkk");
+        SchoolDto schoolDto = new SchoolDto("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", "ddd");
+        learnDao.addUser(learnUserDto);
+        learnDao.addSchool(schoolDto);
+        return ApiResult.success();
+    }
+
+
+    /**
+     * 手动回滚，catch里面需要做别的事
+     * @return
+     */
+    @Transactional(rollbackFor = { Exception.class })
+    public ApiResult add1() {
+        try {
+            LearnUserDto learnUserDto = new LearnUserDto("xiaoming", "dddd", "wwww", "kkkkk");
+            SchoolDto schoolDto = new SchoolDto("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", "ddd");
+            learnDao.addUser(learnUserDto);
+            learnDao.addSchool(schoolDto);
+        } catch (Exception e) {
+            logger.error("入表报错", e);
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            return ApiResult.failure(ResultCode.FAIL);
+        }
+        return ApiResult.success();
+    }
+
 }
