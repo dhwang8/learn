@@ -113,5 +113,16 @@ public class LearnController {
         return learnService.add2();
     }
 
+    /**
+     * 异步调用测试 https://blog.csdn.net/YoungLee16/article/details/88398045
+     * @Async 基于Aop动态代理，要用代理类来调
+     */
+    @RequestMapping(value = "/getAsync")
+    @ResponseBody
+    public void getAsync(){
+        learnService.do1();
+        learnService.do2();
+        learnService.do3();;
+    }
 
 }
